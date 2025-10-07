@@ -2,12 +2,11 @@ import os
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from dotenv import load_dotenv
-
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('POSTGRESQL_ADDON_URI', 'postgresql://localhost/minichat')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('POSTGRESQL_ADDON_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
